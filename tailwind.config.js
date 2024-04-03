@@ -8,6 +8,9 @@ export default {
     extend: {
       colors: {
         primary: 'rgb(var(--color-primary) / <alpha-value>)'
+      },
+      fontFamily: {
+        'noto': ['Noto Sans TC', 'Poppins', 'system-ui', '-apple-system', 'sans-serif']
       }
     },
   },
