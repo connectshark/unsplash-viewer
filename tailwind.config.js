@@ -10,7 +10,7 @@ export default {
         primary: 'rgb(var(--color-primary) / <alpha-value>)'
       },
       fontFamily: {
-        'noto': ['Noto Sans TC', 'Poppins', 'system-ui', '-apple-system', 'sans-serif']
+        'noto': ['Poppins', 'Noto Sans TC', 'system-ui', '-apple-system', 'sans-serif']
       }
     },
   },
