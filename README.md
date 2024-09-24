@@ -27,18 +27,6 @@
 - tailwindcss
 - github action自動部署至 `gh-page`
 
-## 使用模板的優勢
+## LICENSE
 
-### CSS主色設定
-
-使用TailwindCSS官方建議方式設定好CSS變數，可一次調整專案色票。
-
-`src/index.css`
-
-### 自動部署至gh-page
-
-已設定github action功能，在推送新的內容時會觸發部署功能。
-
-### 資料結構為主的路由
-
-將`vue-router`搭配插件修改成以**資料結構**為主的路由設定，所有路由都放置在`src/pages`的資料夾中，預設找不到頁面會進入`[...slug].vue`的頁面。
+[MIT](./LICENSE)
