@@ -37,6 +37,11 @@
 <script setup>
 import useFetch from '../composables/useFetch'
 
+
+const copy = async (url) => {
+  await navigator.clipboard.writeText(url)
+}
+
 const {
   data,
   loading,
