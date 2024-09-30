@@ -10,9 +10,9 @@ export default {
         primary: 'rgb(var(--color-primary) / <alpha-value>)'
       },
       fontFamily: {
-        'noto': ['Poppins', 'Noto Sans TC', 'system-ui', '-apple-system', 'sans-serif']
+        'main': [`Zen Maru Gothic`, 'system-ui', `Arial`, `Helvetica`, `sans-serif`, 'sans-serif', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas']
       }
-    },
+    }
   },
   plugins: [],
 }

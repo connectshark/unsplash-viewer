@@ -3,14 +3,27 @@ import { fileURLToPath } from 'url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import VueRouter from 'unplugin-vue-router/vite'
+import { writeFileSync } from 'fs'
+
+const fetchStaticData = () => {
+  return {
+    name: 'json',
+    async buildEnd () {
+      const fetch_response = await fetch('https://cdn.jsdelivr.net/gh/connectshark/studio-portfolio@latest/brands.json')
+      const data = await fetch_response.json()
+      writeFileSync('./public/brands.json', JSON.stringify(data))
+    }
+  }
+}
 
 /** @type {import('vite').UserConfig} */
 export default defineConfig({
   plugins: [
     vue(),
     VueRouter({
-      importMode: 'sync'
+      importMode: (filepath) => filepath.includes('index') ? 'sync' : 'async'
     }),
+    fetchStaticData()
   ],
   server: {
     port: 8080
@@ -19,8 +32,5 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  },
-  base: process.env.NODE_ENV === 'production'
-    ? '/unsplash-viewer/'
-    : '/'
+  }
 })
