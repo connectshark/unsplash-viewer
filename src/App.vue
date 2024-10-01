@@ -53,7 +53,7 @@ const pages = [
         <router-link class=" uppercase" to="/">{{ SITE_NAME }}</router-link>
       </h1>
       <details class=" relative" v-clickOutside>
-        <summary class="list-none p-2 rounded-md hover:bg-gray-200 cursor-pointer">頁面</summary>
+        <summary class="list-none p-2 rounded-md hover:bg-gray-200 cursor-pointer"><i class='bx bx-menu bx-sm'></i></summary>
         <ul ref="list" class="bg-white absolute right-0 rounded-lg shadow-xl w-48 overflow-hidden">
           <li v-for="page in pages" class="border-b border-gray-200 last:border-none">
             <router-link class="p-4 hover:bg-gray-200 block text-sm/loose" :to="page.url">{{ page.name }}</router-link>

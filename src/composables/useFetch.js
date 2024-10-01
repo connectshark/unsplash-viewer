@@ -13,7 +13,7 @@ export default (path, query) => {
   const fetchData = async () => {
     loading.value = true
     data.value = null
-    const fetch_response = await fetch(DOMAIN + path + `?page=${ page.value }per_page=10&query=${ unref(query) }`, {
+    const fetch_response = await fetch(DOMAIN + path + `?page=${ page.value }&per_page=20&query=${ unref(query) }`, {
       headers: {
         Authorization: `Client-ID ${CLIENT_ID}`
       }
@@ -28,10 +28,14 @@ export default (path, query) => {
   fetchData()
 
   const fetchNextPage = async () => {
+    const queryString = unref(query)
+    if (queryString === '') return
     page.value++
     await fetchData()
   }
   const fetchPrevPage = async () => {
+    const queryString = unref(query)
+    if (queryString === '') return
     page.value--
     await fetchData()
   }

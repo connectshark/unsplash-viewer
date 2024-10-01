@@ -19,13 +19,13 @@ const {
 </script>
 
 <template>
-<section class=" bg-primary py-20">
-  <form @submit.prevent="search" class=" w-1/2 mx-auto">
+<section class="py-20">
+  <form @submit.prevent="search" class=" w-2/3 max-w-3xl mx-auto">
     <p class="mb-8">
-      <input required class=" appearance-none w-full py-3 px-6 rounded-full" placeholder="找出圖 " type="search" v-model="input">
+      <input required class=" bg-gray-200 focus:bg-white appearance-none w-full py-3 px-6 rounded-full" placeholder="找出圖 " type="search" v-model="input">
     </p>
     <p class=" text-center">
-      <input class=" hover:opacity-80 cursor-pointer bg-white px-3 py-2 rounded-xl" type="submit" value="搜尋">
+      <input class=" hover:opacity-80 cursor-pointer bg-gray-200 px-3 py-2 rounded-xl" type="submit" value="搜尋">
     </p>
   </form>
 </section>
