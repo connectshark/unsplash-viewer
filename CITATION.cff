@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: UNSPLASH VIEWER
+message: >-
+  If you use this software, please cite it using the metadata from this file.
+type: software
+authors:
+  - given-names: Nosegates
+    family-names: Nosegates
+    email: bobhus394@gmail.com
+repository-code: 'https://github.com/connectshark/unsplash-viewer'
+url: 'https://unsplash-viewer.pages.dev'
+license: MIT
