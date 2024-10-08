@@ -7,7 +7,11 @@
   </div>
   <section v-else>
     <figure class=" max-w-3xl mx-auto bg-red-50 mb-10">
-      <img :src="data.urls.regular" :alt="data.alt_description">
+      <picture>
+        <source :srcset="data.urls.thumb" media="(max-width: 765px)" />
+        <source :srcset="data.urls.small" media="(max-width: 1200px)"/>
+        <img loading="lazy" class="object-cover w-full" :src="data.urls.regular" :alt="data.alt_description" />
+      </picture>
       <figcaption class=" leading-loose text-center">{{ data.alt_description }}</figcaption>
     </figure>
     <table class="table-auto mx-auto mb-20">
@@ -35,7 +39,7 @@
 
 <script setup>
 import useFetch from '../../composables/useFetch'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 
 const copy = async (url) => {
   await navigator.clipboard.writeText(url)

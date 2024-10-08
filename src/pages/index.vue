@@ -46,10 +46,14 @@ const {
     </p>
   </nav>
     
-  <ul class="p-2 mx-auto columns-[10rem] md:columns-xs gap-2">
-    <li class="mb-2 rounded overflow-hidden" v-for="img in data.results">
+  <ul class="p-2 mx-auto columns-[10rem] md:columns-xs gap-2 *:mb-2 *:rounded *:overflow-hidden">
+    <li v-for="img in data.results">
       <router-link :to="`/photos/${ img.id }`">
-        <img class="object-cover":src="img.urls.regular" :alt="img.alt_description">
+        <picture>
+          <source :srcset="img.urls.thumb" media="(max-width: 765px)" />
+          <source :srcset="img.urls.small" media="(max-width: 1200px)"/>
+          <img loading="lazy" class="object-cover w-full" :src="img.urls.regular" :alt="img.alt_description" />
+        </picture>
       </router-link>
     </li>
   </ul>
